@@ -1,5 +1,3 @@
-// User
-
 export interface User {
   id: number;
   email: string;
@@ -8,22 +6,28 @@ export interface User {
   avatar: string;
 }
 
-// API Response
+export interface Support {
+  url: string;
+  text: string;
+}
 
-export interface UsersListResponse {
+export interface ListUsersResponse {
   page: number;
   per_page: number;
   total: number;
   total_pages: number;
   data: User[];
+  support: Support;
 }
 
 export interface SingleUserResponse {
   data: User;
+  support: Support;
 }
 
-export interface LoginResponse {
-  token: string;
+export interface RegisterRequest {
+  email: string;
+  password: string;
 }
 
 export interface RegisterResponse {
@@ -31,27 +35,20 @@ export interface RegisterResponse {
   token: string;
 }
 
-export interface APIErrorResponse {
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface LoginResponse {
+  token: string;
+}
+
+export interface ApiError {
   error: string;
 }
 
 export interface AuthUser {
   email: string;
-}
-
-export interface AuthContextType {
-  user: AuthUser | null;
-  token: string | null;
-  login: (token: string, userData: AuthUser) => void;
-  logout: () => void;
-  isAuthenticated: boolean;
-  loading: boolean;
-}
-
-// Toast
-
-export type ToastType = 'success' | 'error';
-
-export interface ToastItem {
-    
+  token: string;
 }
