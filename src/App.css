@@ -1,28 +1,29 @@
 @import "tailwindcss";
-
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap");
 
-@theme {
-  --color-brand-50: #fdf4ff;
-  --color-brand-100: #fae8ff;
-  --color-brand-200: #f5d0fe;
-  --color-brand-300: #f0abfc;
-  --color-brand-400: #e879f9;
-  --color-brand-500: #d946ef;
-  --color-brand-600: #c026d3;
-  --color-brand-700: #a21caf;
-  --color-brand-800: #86198f;
-  --color-brand-900: #701a75;
+@layer theme {
+  :root {
+    --color-brand-50: #fdf4ff;
+    --color-brand-100: #fae8ff;
+    --color-brand-200: #f5d0fe;
+    --color-brand-300: #f0abfc;
+    --color-brand-400: #e879f9;
+    --color-brand-500: #d946ef;
+    --color-brand-600: #c026d3;
+    --color-brand-700: #a21caf;
+    --color-brand-800: #86198f;
+    --color-brand-900: #701a75;
 
-  --color-surface-50: #fafafa;
-  --color-surface-100: #f4f4f5;
-  --color-surface-200: #e4e4e7;
-  --color-surface-800: #27272a;
-  --color-surface-900: #18181b;
-  --color-surface-950: #09090b;
+    --color-surface-50: #fafafa;
+    --color-surface-100: #f4f4f5;
+    --color-surface-200: #e4e4e7;
+    --color-surface-800: #27272a;
+    --color-surface-900: #18181b;
+    --color-surface-950: #09090b;
 
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "DM Sans", system-ui, sans-serif;
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-sans: "DM Sans", system-ui, sans-serif;
+  }
 }
 
 @keyframes fade-up {

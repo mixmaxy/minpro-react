@@ -32,7 +32,7 @@ export default function Navbar() {
               </span>
             </div>
             <span className={styles.logoText}>
-              ReqRes<span className={styles.logoDot}>.</span>
+              RepoMe<span className={styles.logoDot}>.</span>
             </span>
           </Link>
 

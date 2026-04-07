@@ -73,12 +73,18 @@ export default function LoginPage() {
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Email */}
               <div>
-                <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-zinc-700 mb-1.5"
+                >
                   Email address
                 </label>
                 <input
                   type="email"
                   value={email}
+                  id="email"
+                  name="email"
+                  autoComplete="off"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="eve.holt@reqres.in"
                   required
@@ -88,13 +94,19 @@ export default function LoginPage() {
 
               {/* Password */}
               <div>
-                <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-zinc-700 mb-1.5"
+                >
                   Password
                 </label>
                 <div className="relative">
                   <input
                     type={showPass ? "text" : "password"}
                     value={password}
+                    id="password"
+                    name="password"
+                    autoComplete="off"
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     required
