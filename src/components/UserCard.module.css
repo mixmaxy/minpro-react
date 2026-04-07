@@ -1,0 +1,145 @@
+.cardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  animation: fadeUp 0.6s ease-out both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgb(228, 228, 231);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.cardLink:hover .card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-color: rgba(168, 85, 247, 0.2);
+  transform: translateY(-0.125rem);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatarContainer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgb(228, 228, 231);
+  transition: all 0.3s ease;
+}
+
+.cardLink:hover .avatar {
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+.onlineBadge {
+  position: absolute;
+  bottom: -0.125rem;
+  right: -0.125rem;
+  width: 1rem;
+  height: 1rem;
+  background: rgb(52, 211, 153);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.userInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.userName {
+  font-weight: 600;
+  color: rgb(24, 24, 27);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.cardLink:hover .userName {
+  color: rgb(168, 85, 247);
+}
+
+.userEmail {
+  font-size: 0.875rem;
+  color: rgb(161, 161, 170);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0.375rem 0 0 0;
+}
+
+.arrowContainer {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgb(245, 245, 245);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.cardLink:hover .arrowContainer {
+  background: rgba(168, 85, 247, 0.1);
+}
+
+.arrowIcon {
+  width: 1rem;
+  height: 1rem;
+  color: rgb(161, 161, 170);
+  transition: color 0.3s ease;
+}
+
+.cardLink:hover .arrowIcon {
+  color: rgb(168, 85, 247);
+}
+
+.cardFooter {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgb(250, 250, 251);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userId {
+  font-size: 0.75rem;
+  color: rgb(161, 161, 170);
+}
+
+.viewProfileBadge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgb(168, 85, 247);
+  background: rgba(168, 85, 247, 0.1);
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
