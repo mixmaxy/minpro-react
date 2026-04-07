@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom";
-import styles from "./NotFound.module.css";
 
 export default function NotFoundPage() {
   return (
-    <div className={styles.container}>
-      <div className={styles.contentWrapper}>
-        <p className={styles.notFoundNumber}>404</p>
-        <div className={styles.content}>
-          <h1 className={styles.title}>Page not found</h1>
-          <p className={styles.description}>
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-zinc-50 via-fuchsia-50/20 to-zinc-50 px-4 text-center">
+      <div className="animate-fade-up">
+        <p className="font-display text-[120px] sm:text-[160px] font-bold text-zinc-100 leading-none select-none">
+          404
+        </p>
+        <div className="-mt-6 relative z-10">
+          <h1 className="font-display text-2xl sm:text-3xl font-bold text-zinc-900 mb-3">
+            Page not found
+          </h1>
+          <p className="text-zinc-500 max-w-sm mx-auto mb-8">
             The page you're looking for doesn't exist or has been moved.
           </p>
-          <Link to="/" className={styles.link}>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-fuchsia-600 text-white font-medium hover:bg-fuchsia-700 transition-colors shadow-md shadow-fuchsia-200"
+          >
             <svg
-              className={styles.linkIcon}
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

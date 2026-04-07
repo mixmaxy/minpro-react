@@ -1,7 +1,6 @@
 import { useUsers } from "../hooks";
 import UserCard from "../components/UserCard";
 import Pagination from "../components/Pagination";
-import styles from "./Home.module.css";
 
 export default function HomePage() {
   const {
@@ -20,17 +19,21 @@ export default function HomePage() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="min-h-screen bg-linear-to-br from-zinc-50 via-fuchsia-50/20 to-zinc-50">
       {/* Hero section */}
-      <div className={styles.heroSection}>
-        <div className={styles.heroContent}>
-          <div className={styles.animateUp}>
-            <div className={styles.badge}>
-              <span className={styles.badgeDot} />
-              Live Data from ReqRes API
+      <div className="bg-white border-b border-zinc-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+          <div className="animate-fade-up">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-fuchsia-50 border border-fuchsia-200 text-fuchsia-700 text-xs font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-500 animate-pulse" />
+                Live Data from ReqRes API
+              </span>
             </div>
-            <h1 className={styles.title}>User Directory</h1>
-            <p className={styles.subtitle}>
+            <h1 className="font-display text-3xl sm:text-4xl font-bold text-zinc-900 mb-2">
+              User Directory
+            </h1>
+            <p className="text-zinc-500 text-base max-w-xl">
               Browse and explore all registered users. Click any card to view
               their full profile.
             </p>
@@ -38,26 +41,28 @@ export default function HomePage() {
 
           {/* Stats */}
           {!loading && !error && (
-            <div className={styles.statsSection}>
-              <div className={styles.statCard}>
+            <div className="flex flex-wrap gap-4 mt-6 animate-fade-up delay-200">
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-100">
                 <svg
-                  className={styles.statIcon}
+                  className="w-4 h-4 text-fuchsia-500"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
                   <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                 </svg>
-                <span className={styles.statText}>{total} total users</span>
+                <span className="text-sm font-medium text-zinc-700">
+                  {total} total users
+                </span>
               </div>
-              <div className={styles.statCard}>
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-50 border border-zinc-100">
                 <svg
-                  className={styles.statIcon}
+                  className="w-4 h-4 text-fuchsia-500"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
                   <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
                 </svg>
-                <span className={styles.statText}>
+                <span className="text-sm font-medium text-zinc-700">
                   Page {currentPage} of {totalPages}
                 </span>
               </div>
@@ -67,13 +72,13 @@ export default function HomePage() {
       </div>
 
       {/* Content */}
-      <div className={styles.mainContent}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
         {/* Error state */}
         {error && (
-          <div className={styles.errorContainer}>
-            <div className={styles.errorIcon}>
+          <div className="flex flex-col items-center justify-center py-20 text-center animate-fade-in">
+            <div className="w-16 h-16 rounded-2xl bg-red-50 flex items-center justify-center mb-4">
               <svg
-                className={styles.errorIconSvg}
+                className="w-8 h-8 text-red-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -86,11 +91,13 @@ export default function HomePage() {
                 />
               </svg>
             </div>
-            <h3 className={styles.errorTitle}>Something went wrong</h3>
-            <p className={styles.errorMessage}>{error}</p>
+            <h3 className="font-semibold text-zinc-800 mb-2">
+              Something went wrong
+            </h3>
+            <p className="text-zinc-500 text-sm mb-5">{error}</p>
             <button
               onClick={() => setCurrentPage(1)}
-              className={styles.retryButton}
+              className="px-5 py-2.5 rounded-xl bg-fuchsia-600 text-white text-sm font-medium hover:bg-fuchsia-700 transition-colors shadow-sm"
             >
               Try again
             </button>
@@ -99,21 +106,22 @@ export default function HomePage() {
 
         {/* Loading skeleton */}
         {loading && (
-          <div className={styles.gridContainer}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className={styles.skeletonCard}>
-                <div className={styles.skeletonHeader}>
-                  <div className={styles.skeletonAvatar} />
-                  <div className={styles.skeletonContent}>
-                    <div className={styles.skeletonLine} />
-                    <div
-                      className={`${styles.skeletonLine} ${styles.skeletonLineShort}`}
-                    />
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-5 border border-zinc-100 shadow-sm animate-pulse"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-full bg-zinc-100" />
+                  <div className="flex-1">
+                    <div className="h-4 bg-zinc-100 rounded-lg mb-2 w-3/4" />
+                    <div className="h-3 bg-zinc-100 rounded-lg w-1/2" />
                   </div>
                 </div>
-                <div className={styles.skeletonFooter}>
-                  <div className={styles.skeletonFooterItem} />
-                  <div className={styles.skeletonFooterItem} />
+                <div className="mt-3 pt-3 border-t border-zinc-50 flex justify-between">
+                  <div className="h-3 bg-zinc-100 rounded w-12" />
+                  <div className="h-3 bg-zinc-100 rounded w-24" />
                 </div>
               </div>
             ))}
@@ -123,7 +131,7 @@ export default function HomePage() {
         {/* Users grid */}
         {!loading && !error && (
           <>
-            <div className={styles.gridContainer}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {users.map((user, index) => (
                 <UserCard key={user.id} user={user} index={index} />
               ))}
@@ -140,4 +148,4 @@ export default function HomePage() {
       </div>
     </div>
   );
-};
+}

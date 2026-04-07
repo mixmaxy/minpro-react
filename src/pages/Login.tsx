@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useLoginForm } from "../hooks";
-import styles from "./Login.module.css";
 
 export default function LoginPage() {
   const {
@@ -16,20 +15,23 @@ export default function LoginPage() {
   } = useLoginForm();
 
   return (
-    <div className={styles.container}>
-      <div className={`${styles.blurBackdrop} ${styles.blurRight}`} />
-      <div className={`${styles.blurBackdrop} ${styles.blurLeft}`} />
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-zinc-50 via-fuchsia-50/30 to-zinc-50 px-4 py-12">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-fuchsia-100/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-100/30 rounded-full blur-3xl pointer-events-none" />
 
-      <div className={styles.contentWrapper}>
-        <div className={styles.card}>
-          <div className={styles.topBorder} />
+      <div className="relative w-full max-w-md animate-fade-up">
+        {/* Card */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-zinc-100 overflow-hidden">
+          {/* Header strip */}
+          <div className="h-1.5 bg-linear-to-r from-fuchsia-400 via-purple-500 to-fuchsia-600" />
 
-          <div className={styles.cardBody}>
-            {/* Header */}
-            <div className={styles.headerSection}>
-              <div className={styles.headerIcon}>
+          <div className="p-8">
+            {/* Title */}
+            <div className="mb-8 text-center">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-fuchsia-600 shadow-lg shadow-fuchsia-200 mb-4">
                 <svg
-                  className={styles.headerIconSvg}
+                  className="w-7 h-7 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -42,17 +44,19 @@ export default function LoginPage() {
                   />
                 </svg>
               </div>
-              <h1 className={styles.headerTitle}>Welcome back</h1>
-              <p className={styles.headerSubtitle}>
+              <h1 className="font-display text-2xl font-bold text-zinc-900">
+                Welcome back
+              </h1>
+              <p className="text-sm text-zinc-500 mt-1">
                 Sign in to your account to continue
               </p>
             </div>
 
             {/* Error */}
             {error && (
-              <div className={styles.errorBox}>
+              <div className="mb-5 flex items-start gap-3 px-4 py-3 rounded-xl bg-red-50 border border-red-100 text-red-700 text-sm animate-fade-in">
                 <svg
-                  className={styles.errorIcon}
+                  className="w-4 h-4 mt-0.5 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -66,39 +70,44 @@ export default function LoginPage() {
               </div>
             )}
 
-            {/* Form */}
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.formGroup}>
-                <label className={styles.label}>Email address</label>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                  Email address
+                </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="eve.holt@reqres.in"
                   required
-                  className={styles.input}
+                  className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-900 placeholder-zinc-400 text-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-300 focus:border-fuchsia-300 focus:bg-white transition-all"
                 />
               </div>
 
-              <div className={styles.formGroup}>
-                <label className={styles.label}>Password</label>
-                <div className={styles.inputWrapper}>
+              {/* Password */}
+              <div>
+                <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                  Password
+                </label>
+                <div className="relative">
                   <input
                     type={showPass ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     required
-                    className={styles.input}
+                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-900 placeholder-zinc-400 text-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-300 focus:border-fuchsia-300 focus:bg-white transition-all pr-11"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPass(!showPass)}
-                    className={styles.toggleButton}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 transition-colors"
                   >
                     {showPass ? (
                       <svg
-                        className={styles.toggleIcon}
+                        className="w-5 h-5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -112,7 +121,7 @@ export default function LoginPage() {
                       </svg>
                     ) : (
                       <svg
-                        className={styles.toggleIcon}
+                        className="w-5 h-5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -136,9 +145,9 @@ export default function LoginPage() {
               </div>
 
               {/* Hint */}
-              <div className={styles.hintBox}>
+              <div className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-fuchsia-50 border border-fuchsia-100">
                 <svg
-                  className={styles.hintIcon}
+                  className="w-4 h-4 text-fuchsia-400 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -148,7 +157,7 @@ export default function LoginPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>
+                <span className="text-xs text-fuchsia-700">
                   Try: <strong>eve.holt@reqres.in</strong> /{" "}
                   <strong>cityslicka</strong>
                 </span>
@@ -158,32 +167,17 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className={styles.submitButton}
-                style={{
-                  opacity: loading ? 0.6 : 1,
-                  cursor: loading ? "not-allowed" : "pointer",
-                }}
+                className="w-full py-3 rounded-xl bg-fuchsia-600 text-white font-semibold text-sm hover:bg-fuchsia-700 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed transition-all shadow-md shadow-fuchsia-200 mt-2"
               >
                 {loading ? (
-                  <span
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "0.5rem",
-                    }}
-                  >
+                  <span className="flex items-center justify-center gap-2">
                     <svg
-                      style={{
-                        animation: "spin 1s linear infinite",
-                        height: "1rem",
-                        width: "1rem",
-                      }}
+                      className="animate-spin h-4 w-4"
                       viewBox="0 0 24 24"
                       fill="none"
                     >
                       <circle
-                        style={{ opacity: 0.25 }}
+                        className="opacity-25"
                         cx="12"
                         cy="12"
                         r="10"
@@ -191,7 +185,7 @@ export default function LoginPage() {
                         strokeWidth="4"
                       />
                       <path
-                        style={{ opacity: 0.75 }}
+                        className="opacity-75"
                         fill="currentColor"
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                       />
@@ -204,24 +198,18 @@ export default function LoginPage() {
               </button>
             </form>
 
-            {/* Footer */}
-            <p className={styles.footer}>
+            <p className="mt-6 text-center text-sm text-zinc-500">
               Don't have an account?{" "}
-              <Link to="/register" className={styles.footerLink}>
+              <Link
+                to="/register"
+                className="font-semibold text-fuchsia-600 hover:text-fuchsia-700 transition-colors"
+              >
                 Create one
               </Link>
             </p>
           </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes spin {
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
     </div>
   );
-};
+}
