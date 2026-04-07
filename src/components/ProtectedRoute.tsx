@@ -1,7 +1,7 @@
-import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-const ProtectedRoute: React.FC = () => {
+export default function ProtectedRoute() {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
@@ -9,6 +9,4 @@ const ProtectedRoute: React.FC = () => {
   }
 
   return <Outlet />;
-};
-
-export default ProtectedRoute;
+}
