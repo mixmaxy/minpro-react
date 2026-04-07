@@ -4,7 +4,7 @@ const api = axios.create({
   baseURL: 'https://reqres.in/api',
   headers: {
     'Content-Type': 'application/json',
-    'x-api-key': 'reqres-free-v1',
+    'x-api-key': 'pub_8e8e332e7f5692a6842c35f3abf3f065',
   },
   timeout: 10000,
 });
