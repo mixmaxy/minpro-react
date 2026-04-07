@@ -1,17 +1,19 @@
-import api from './axiosInstance';
+import api from "./api";
 import type {
   RegisterRequest,
   RegisterResponse,
   LoginRequest,
   LoginResponse,
-} from '../types';
+} from "../types";
 
-export const registerUser = async (data: RegisterRequest): Promise<RegisterResponse> => {
-  const response = await api.post<RegisterResponse>('/register', data);
+export const registerUser = async (
+  data: RegisterRequest,
+): Promise<RegisterResponse> => {
+  const response = await api.post<RegisterResponse>("/register", data);
   return response.data;
 };
 
 export const loginUser = async (data: LoginRequest): Promise<LoginResponse> => {
-  const response = await api.post<LoginResponse>('/login', data);
+  const response = await api.post<LoginResponse>("/login", data);
   return response.data;
 };
