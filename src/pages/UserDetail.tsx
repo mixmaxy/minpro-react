@@ -99,7 +99,7 @@ export default function UserDetailPage() {
 
             <div className="px-6 sm:px-8 pb-8">
               {/* Avatar + name */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4 -mt-14 mb-8">
+              <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4 -mt-8 mb-8">
                 <div className="relative">
                   <img
                     src={user.avatar}

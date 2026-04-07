@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Dokumentasi Mini Project React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Daftar Library yang Digunakan
 
-Currently, two official plugins are available:
+### Dependencies (runtime)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `react`: Library utama untuk membangun UI.
+- `react-dom`: Renderer React untuk aplikasi web.
+- `react-router-dom`: Routing, navigasi halaman, dan protected route.
+- `axios`: HTTP client untuk integrasi API `https://reqres.in`.
+- `tailwindcss`: Styling utility-first.
+- `@tailwindcss/vite`: Integrasi Tailwind CSS pada Vite.
 
-## React Compiler
+### Dev Dependencies (development tools)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `typescript`: Type safety pada codebase.
+- `vite`: Development server dan bundler.
+- `@vitejs/plugin-react`: Plugin React untuk Vite.
+- `eslint`: Linting untuk menjaga kualitas kode.
+- `@eslint/js`: Base config ESLint JavaScript.
+- `typescript-eslint`: Integrasi ESLint untuk TypeScript.
+- `eslint-plugin-react-hooks`: Validasi aturan React Hooks.
+- `eslint-plugin-react-refresh`: Dukungan lint untuk React Fast Refresh.
+- `globals`: Definisi global variables untuk linting.
+- `@types/react`: Type definitions React.
+- `@types/react-dom`: Type definitions React DOM.
+- `@types/node`: Type definitions Node.js.
 
-## Expanding the ESLint configuration
+## Pemenuhan Requirement Milestone 1 (API Integration)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+API yang digunakan: `https://reqres.in`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `REGISTER - SUCCESSFUL`: diimplementasikan melalui endpoint `POST /register`.
+- `REGISTER - UNSUCCESSFUL`: ditangani dengan menampilkan error dari response API.
+- `LOGIN - SUCCESSFUL`: diimplementasikan melalui endpoint `POST /login`.
+- `LOGIN - UNSUCCESSFUL`: ditangani dengan menampilkan error dari response API.
+- `LIST USERS`: diimplementasikan melalui endpoint `GET /users?page={page}`.
+- `SINGLE USER`: diimplementasikan melalui endpoint `GET /users/{id}`.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Pemenuhan Requirement Milestone 2 (React Application)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Menggunakan `React.js` sebagai frontend framework.
+- Fitur register user sudah tersedia.
+- Fitur login user sudah tersedia.
+- Menampilkan daftar user dari API pada halaman home.
+- Menampilkan detail tiap user pada halaman detail.
+- Pagination di halaman home sudah diimplementasikan.
+- Protected routes sudah diterapkan pada halaman tertentu.
+- Desain aplikasi sudah responsif untuk berbagai ukuran perangkat.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Fitur Tambahan di Luar Requirement Utama
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Persistensi sesi login**: data user dan token disimpan di `localStorage`, sehingga tetap login setelah refresh.
+- **Auto login setelah register berhasil**: setelah registrasi sukses, user langsung diarahkan ke halaman utama.
+- **Validasi form tambahan**:
+  - konfirmasi password harus sama,
+  - minimal panjang password,
+  - toggle show/hide password.
+- **UI state yang lebih lengkap**:
+  - loading skeleton pada halaman list dan detail user,
+  - pesan sukses/error yang informatif saat autentikasi dan fetch data.
+- **Custom 404 page**: route yang tidak dikenali diarahkan ke halaman not found khusus.
+- **UX enhancement**: smooth scroll saat pindah halaman pagination dan komponen navigasi dengan state login/logout.
