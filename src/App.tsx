@@ -7,7 +7,6 @@ import RegisterPage from "./pages/Register";
 import NotFoundPage from "./pages/NotFound";
 import UserDetailPage from "./pages/UserDetail";
 import Navbar from "./components/Navbar";
-import "./App.css";
 
 export default function App() {
   return (

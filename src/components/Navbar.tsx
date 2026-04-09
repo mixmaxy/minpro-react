@@ -42,7 +42,11 @@ export default function Navbar() {
               <>
                 <Link
                   to="/"
-                  className={`${styles.navLink} ${isActive("/") ? styles.navLinkActive : styles.navLinkInactive}`}
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                    isActive('/')
+                      ? 'bg-fuchsia-50 text-fuchsia-700'
+                      : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50'
+                  }`}
                 >
                   Users
                 </Link>
@@ -58,17 +62,24 @@ export default function Navbar() {
                 </div>
               </>
             ) : (
-              <div className={styles.authLinks}>
+              <>
                 <Link
                   to="/login"
-                  className={`${styles.navLink} ${isActive("/login") ? styles.navLinkActive : styles.navLinkInactive}`}
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                    isActive('/login')
+                      ? 'bg-fuchsia-50 text-fuchsia-700'
+                      : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50'
+                  }`}
                 >
                   Login
                 </Link>
-                <Link to="/register" className={styles.registerBtn}>
+                <Link
+                  to="/register"
+                  className="px-4 py-1.5 rounded-lg text-sm font-medium bg-fuchsia-600 text-white hover:bg-fuchsia-700 transition-all shadow-sm"
+                >
                   Register
                 </Link>
-              </div>
+              </>
             )}
           </div>
         </div>

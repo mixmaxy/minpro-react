@@ -14,17 +14,17 @@
   border-radius: 0.75rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: rgb(113, 113, 122);
+  color: oklch(44.2% 0.017 285.786);
   background: white;
-  border: 1px solid rgb(228, 228, 231);
+  border: 1px solid oklch(92% 0.004 286.32);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .paginationButton:hover:not(:disabled) {
-  border-color: rgba(168, 85, 247, 0.3);
-  color: rgb(168, 85, 247);
+  border-color: oklch(83.3% 0.145 321.434);
+  color: oklch(59.1% 0.293 322.896);
 }
 
 .paginationButton:disabled {
@@ -33,8 +33,8 @@
 }
 
 .paginationButton:disabled:hover {
-  border-color: rgb(228, 228, 231);
-  color: rgb(113, 113, 122);
+  border-color: oklch(92% 0.004 286.32);
+  color: oklch(44.2% 0.017 285.786);
 }
 
 .pageButtonText {
@@ -65,21 +65,21 @@
   font-size: 0.875rem;
   font-weight: 500;
   background: white;
-  color: rgb(113, 113, 122);
-  border: 1px solid rgb(228, 228, 231);
+  color: oklch(44.2% 0.017 285.786);
+  border: 1px solid oklch(92% 0.004 286.32);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .pageBtn:hover {
-  border-color: rgba(168, 85, 247, 0.3);
-  color: rgb(168, 85, 247);
+  border-color: oklch(83.3% 0.145 321.434);
+  color: oklch(59.1% 0.293 322.896);
 }
 
 .pageActive {
-  background: rgb(168, 85, 247);
+  background: oklch(59.1% 0.293 322.896);
   color: white;
-  box-shadow: 0 4px 6px -1px rgba(168, 85, 247, 0.3);
+  box-shadow: 0 4px 6px -1px oklch(83.3% 0.145 321.434);
   transform: scale(1.05);
 }

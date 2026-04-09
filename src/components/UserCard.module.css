@@ -20,7 +20,7 @@
   background: white;
   border-radius: 1rem;
   padding: 1.25rem;
-  border: 1px solid rgb(228, 228, 231);
+  border: 1px solid oklch(92% 0.004 286.32);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
 }
@@ -47,7 +47,7 @@
   height: 3.5rem;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgb(228, 228, 231);
+  border: 2px solid oklch(92% 0.004 286.32);
   transition: all 0.3s ease;
 }
 
@@ -61,7 +61,7 @@
   right: -0.125rem;
   width: 1rem;
   height: 1rem;
-  background: rgb(52, 211, 153);
+  background: oklch(76.5% 0.177 163.223);
   border-radius: 50%;
   border: 2px solid white;
 }
@@ -82,12 +82,12 @@
 }
 
 .cardLink:hover .userName {
-  color: rgb(168, 85, 247);
+  color: oklch(59.1% 0.293 322.896);
 }
 
 .userEmail {
   font-size: 0.875rem;
-  color: rgb(161, 161, 170);
+  color: oklch(70.5% 0.015 286.067);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -113,12 +113,12 @@
 .arrowIcon {
   width: 1rem;
   height: 1rem;
-  color: rgb(161, 161, 170);
+  color: oklch(70.5% 0.015 286.067);
   transition: color 0.3s ease;
 }
 
 .cardLink:hover .arrowIcon {
-  color: rgb(168, 85, 247);
+  color: oklch(59.1% 0.293 322.896);
 }
 
 .cardFooter {
@@ -132,13 +132,13 @@
 
 .userId {
   font-size: 0.75rem;
-  color: rgb(161, 161, 170);
+  color: oklch(70.5% 0.015 286.067);
 }
 
 .viewProfileBadge {
   font-size: 0.75rem;
   font-weight: 500;
-  color: rgb(168, 85, 247);
+  color: oklch(59.1% 0.293 322.896);
   background: rgba(168, 85, 247, 0.1);
   padding: 0.125rem 0.5rem;
   border-radius: 9999px;
