@@ -64,7 +64,7 @@ export default function RegisterPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="sydney@fife.com"
+                  placeholder="eve.holt@reqres.in"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-900 placeholder-zinc-400 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-purple-300 focus:bg-white transition-all"
                 />
@@ -108,11 +108,10 @@ export default function RegisterPage() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="••••••••"
                   required
-                  className={`w-full px-4 py-3 rounded-xl border bg-zinc-50 text-zinc-900 placeholder-zinc-400 text-sm focus:outline-none focus:ring-2 focus:bg-white transition-all ${
-                    confirmPassword && confirmPassword !== password
+                  className={`w-full px-4 py-3 rounded-xl border bg-zinc-50 text-zinc-900 placeholder-zinc-400 text-sm focus:outline-none focus:ring-2 focus:bg-white transition-all ${confirmPassword && confirmPassword !== password
                       ? 'border-red-300 focus:ring-red-200'
                       : 'border-zinc-200 focus:ring-purple-300 focus:border-purple-300'
-                  }`}
+                    }`}
                 />
                 {confirmPassword && confirmPassword !== password && (
                   <p className="text-xs text-red-500 mt-1">Passwords don't match</p>
@@ -122,7 +121,7 @@ export default function RegisterPage() {
               {/* Hint */}
               <div className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-purple-50 border border-purple-100">
                 <svg className="w-4 h-4 text-purple-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"/>
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
                 <span className="text-xs text-purple-700">Try: <strong>eve.holt@reqres.in</strong> / <strong>pistol</strong></span>
               </div>

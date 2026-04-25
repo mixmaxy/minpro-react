@@ -50,14 +50,14 @@ export const useRegisterForm = (): UseRegisterFormReturn => {
     setLoading(true);
     try {
       const response = await registerUser({ email, password });
-      setSuccess(`Account created! Token: ${response.token}`);
+      setSuccess(`Account created!`);
       login({ email, token: response.token });
       setTimeout(() => navigate("/"), 1200);
     } catch (err) {
       const axiosErr = err as AxiosError<ApiError>;
       setError(
         axiosErr.response?.data?.error ||
-          "Registration failed. Please try again.",
+        "Registration failed. Please try again.",
       );
     } finally {
       setLoading(false);
